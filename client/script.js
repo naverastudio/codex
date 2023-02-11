@@ -69,13 +69,8 @@ const handleSubmit = async (e) => {
     const uniqueId = generateUniqueId();
     chatContainer.innerHTML += chatStripe(true, ' ', uniqueId);
 
-    // Smooth scrolling between the chat and response
-
-    const chatWrapper = document.querySelector('.wrapper:first-child');
-    chatWrapper.scrollIntoView({ behavior: 'smooth' });
-
     // to focus scroll to the bottom
-    window.scrollTo(0, chatContainer.scrollHeight);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
 
     const messageDiv = document.getElementById(uniqueId);
 
